@@ -8,7 +8,7 @@ function validAnagram(first, second) {
     const lookUp = {};
     for (let i = 0; i < first.length; i++) {
         let letter = first[i];
-        //if letter exists, increment, otherwise set to 2
+        //if letter exists, increment, otherwise set to 1
         lookUp[letter] ? lookUp[letter] += 1 : lookUp[letter] = 1;
     }
     for (let i = 0; i < second.length; i++) {
