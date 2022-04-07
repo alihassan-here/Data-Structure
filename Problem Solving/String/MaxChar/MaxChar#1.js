@@ -1,6 +1,5 @@
 function maxChar(str) {
     let char = {};
-    console.log(str.toLowerCase());
     for (let c of str) {
         if (char[c]) {
             char[c]++;
