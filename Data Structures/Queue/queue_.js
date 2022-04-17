@@ -8,6 +8,9 @@ class Queue {
     dequeue() {
         return this.data.shift();
     }
+    peek() {
+        return this.data[this.data.length - 1];
+    }
     front() {
         return this.data[0];
     }
@@ -33,3 +36,4 @@ console.log(queue.front());
 console.log(queue.isEmpty());
 queue.print();
 console.log(queue.size());
+module.exports = Queue;
