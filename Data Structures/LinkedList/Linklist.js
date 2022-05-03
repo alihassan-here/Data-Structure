@@ -101,10 +101,43 @@ class LinkedList {
         previous.next = node;
 
     }
+    midpoint() {
+        if (!this.head) return null;
+        let slow = this.head;
+        let fast = this.head;
+        while (fast && fast.next) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+    printList() {
+        let node = this.head;
+        while (node) {
+            console.log(node.data);
+            node = node.next;
+        }
+    }
+    circularList() {
+        if (!this.head) return null;
+        let slow = this.head;
+        let fast = this.head;
+        while (fast && fast.next) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow === fast) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
 
 const list = new LinkedList();
 list.insertFirst(100);
 list.insertFirst(200);
 list.insertFirst(300);
-console.log(list.getLast());
+list.insertFirst(400);
+list.insertFirst(500);
+console.log(list.circularList());
