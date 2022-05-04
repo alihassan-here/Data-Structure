@@ -131,6 +131,20 @@ class LinkedList {
         }
         return false;
     }
+    fromLast(n) {
+        if (!this.head) return null;
+        let slow = this.head;
+        let fast = this.head;
+        while (fast && fast.next) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        while (slow && n > 0) {
+            slow = slow.next;
+            n--;
+        }
+        return slow;
+    }
 
 }
 
